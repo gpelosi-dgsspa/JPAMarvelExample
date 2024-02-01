@@ -15,6 +15,11 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
+		<flyway.user>doctorstrange</flyway.user>
+		<flyway.password>stranger</flyway.password>
+		<flyway.schemas>javamarvelexample</flyway.schemas>
+		<flyway.url>jdbc:h2:mem:javamarvelexample</flyway.url>
+		<flyway.locations>filesystem:db/migration</flyway.locations>
 	</properties>
 	<dependencies>
 		<dependency>
