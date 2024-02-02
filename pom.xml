@@ -15,11 +15,11 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-		<flyway.user>doctorstrange</flyway.user>
+		<!--<flyway.user>doctorstrange</flyway.user>
 		<flyway.password>stranger</flyway.password>
 		<flyway.schemas>javamarvelexample</flyway.schemas>
 		<flyway.url>jdbc:h2:mem:javamarvelexample</flyway.url>
-		<flyway.locations>filesystem:db/migration</flyway.locations>
+		<flyway.locations>filesystem:db/migration</flyway.locations>-->
 	</properties>
 	<dependencies>
 		<dependency>
@@ -31,9 +31,15 @@
     		<artifactId>h2</artifactId>
     		<scope>runtime</scope>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
+		</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-maven-plugin -->
+		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-maven-plugin</artifactId>
+			<version>10.7.1</version>
 		</dependency>
 
 		<dependency>
@@ -47,6 +53,32 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.4.2.Final</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.6.15.Final</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -57,13 +89,14 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>8.5.13</version>
 				<configuration>
-					<user>DoctorStrange</user>
-					<password>stranger</password>
-					<schemas>
+					<url>jdbc:h2:mem:javamarvelexample</url>
+					<user>sa</user>
+					<password>password</password>
+					&lt;!&ndash;<schemas>
 						<schema>Personaggi</schema>
 						<schema>Abilita</schema>
 						<schema>Film</schema>
-					</schemas>
+					</schemas>&ndash;&gt;
 				</configuration>
 			</plugin>-->
 
