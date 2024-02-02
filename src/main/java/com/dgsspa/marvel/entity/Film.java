@@ -12,6 +12,8 @@ import java.util.Date;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "Film")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

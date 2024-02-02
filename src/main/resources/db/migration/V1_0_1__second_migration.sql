@@ -1,0 +1,1 @@
+create table pfilm (id_film Integer NOT NULL references film (id), id_personaggi Integer NOT NULL references personaggi (id), primary key (id_film, id_personaggi));

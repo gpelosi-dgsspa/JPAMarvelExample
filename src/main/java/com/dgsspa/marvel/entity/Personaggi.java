@@ -12,6 +12,8 @@ import java.util.Date;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "Personaggi")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Personaggi {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,15 +31,4 @@ public class Personaggi {
 
     @Column(name = "DataNascita")
     private Date dataNascita;
-
-    public Personaggi(Integer id, String nome, String razza, Date eta, Date dataNascita) {
-        this.id = id;
-        this.nome = nome;
-        this.razza = razza;
-        this.eta = eta;
-        this.dataNascita = dataNascita;
-    }
-
-    public Personaggi() {
-    }
 }
