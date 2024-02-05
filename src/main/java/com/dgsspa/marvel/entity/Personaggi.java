@@ -40,13 +40,12 @@ public class Personaggi{
     @JoinColumn(name="EroeID")
     private Set<Abilita> skills = new HashSet<>();
 
-
-    /*@ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "pfilm",
             joinColumns = { @JoinColumn(name = "id_film") },
             inverseJoinColumns = { @JoinColumn(name = "id_personaggi") }
     )
-    Set<Film> films = new HashSet<>();*/
+    Set<Film> films = new HashSet<>();
 
 }

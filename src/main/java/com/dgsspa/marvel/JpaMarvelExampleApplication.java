@@ -2,6 +2,7 @@ package com.dgsspa.marvel;
 
 import com.dgsspa.marvel.entity.Abilita;
 import com.dgsspa.marvel.repository.PersonaggiRepository;
+import com.dgsspa.marvel.services.FilmService;
 import com.dgsspa.marvel.services.PersonaggiService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,19 +30,27 @@ public class JpaMarvelExampleApplication {
 
 	@Autowired
 	PersonaggiService personaggiService;
+	@Autowired
+	FilmService filmService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(JpaMarvelExampleApplication.class, args);
 	}
 
 	@Bean
-	public CommandLineRunner stampaPersonaggi(PersonaggiService personaggiService) {
+	public CommandLineRunner stampa(PersonaggiService personaggiService) {
 		return (args) -> {
 			// find all personaggi
 			log.info("findByNome() Personaggi");
 			log.info("-------------------------------");
 			log.info(personaggiService.findByNome("Spider-Man").toString());
 			log.info("\n");
+			log.info("findByNomeFilm() Film");
+			log.info("-------------------------------");
+			log.info(filmService.findByNomeFilm("The Avengers").toString());
+			log.info("countAllFilm() Personaggi");
+			log.info("-------------------------------");
+			log.info(personaggiService.countAllFilm().toString());
 		};
 	}
 

@@ -18,4 +18,6 @@ public class PersonaggiService{
         return personaggiRepository.findByNome(nome);
     }
 
+    public Set<String> countAllFilm(){ return personaggiRepository.countAllFilm(); }
+
 }
