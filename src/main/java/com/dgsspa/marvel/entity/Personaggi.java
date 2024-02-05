@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
@@ -31,4 +33,18 @@ public class Personaggi {
 
     @Column(name = "DataNascita")
     private Date dataNascita;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="EroeID")
+    private Set<Abilita> skills = new HashSet<>();
+
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "pfilm",
+            joinColumns = { @JoinColumn(name = "id_film") },
+            inverseJoinColumns = { @JoinColumn(name = "id_personaggi") }
+    )
+    Set<Film> films = new HashSet<>();
+
 }
