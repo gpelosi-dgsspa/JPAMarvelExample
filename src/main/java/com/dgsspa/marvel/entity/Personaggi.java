@@ -1,11 +1,13 @@
 package com.dgsspa.marvel.entity;
 
-/*import jakarta.persistence.*;*/
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+/*import javax.persistence.*;*/
+
+import java.lang.annotation.Annotation;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,7 +18,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Personaggi {
+public class Personaggi{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -39,12 +41,12 @@ public class Personaggi {
     private Set<Abilita> skills = new HashSet<>();
 
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    /*@ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
             name = "pfilm",
             joinColumns = { @JoinColumn(name = "id_film") },
             inverseJoinColumns = { @JoinColumn(name = "id_personaggi") }
     )
-    Set<Film> films = new HashSet<>();
+    Set<Film> films = new HashSet<>();*/
 
 }
