@@ -15,8 +15,8 @@ VALUES
     ('Controllo delle Formiche', 'Elevata', 13),
     ('Stinger Blasts', 'Alta', 14),
     ('Telepatia', 'Bassa', 15),
-    ('Telecinesi', 'Bassa', 16),
-    ('Velocità Supersonica', 'Elevata', 17),
-    ('Controllo delle Api', 'Bassa', 18),
-    ('Arrampicata', 'Media', 19),
-    ('Manipolazione della Realtà', 'Divina', 20);
+    ('Telecinesi', 'Bassa', 14),
+    ('Velocità Supersonica', 'Elevata', 13),
+    ('Controllo delle Api', 'Bassa', 12),
+    ('Arrampicata', 'Media', 11),
+    ('Manipolazione della Realtà', 'Divina', 10);
