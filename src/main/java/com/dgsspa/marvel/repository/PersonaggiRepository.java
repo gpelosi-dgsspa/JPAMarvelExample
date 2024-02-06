@@ -13,10 +13,6 @@ import java.util.Set;
 @Repository
 public interface PersonaggiRepository extends JpaRepository<Personaggi, Integer> {
 
-    @Query(value = "SELECT a.Abilita  FROM personaggi p JOIN abilita a ON p.id = a.EroeID WHERE p.Nome = (:nome)",
-        nativeQuery = true)
-    Set<String> findByNomePersonale(@Param("nome")String nome);
-
     Personaggi findByNome(String nome);
 
     @Query(value = "SELECT p.nome AS NomePersonaggio, COUNT(pf.id_film) AS Apparizioni FROM personaggi p JOIN pfilm pf ON p.id = pf.id_personaggi GROUP BY p.nome ORDER BY Apparizioni DESC",

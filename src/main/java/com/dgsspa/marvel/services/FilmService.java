@@ -1,6 +1,5 @@
 package com.dgsspa.marvel.services;
 
-import com.dgsspa.marvel.JpaMarvelExampleApplication;
 import com.dgsspa.marvel.entity.Film;
 import com.dgsspa.marvel.entity.Personaggi;
 import com.dgsspa.marvel.repository.FilmRepository;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class FilmService {
@@ -20,10 +18,6 @@ public class FilmService {
     private static final Logger log = LoggerFactory.getLogger(FilmService.class);
     @Autowired
     private FilmRepository filmRepository;
-
-    public Set<String> findByNomeFilm(String nomeFilm){
-        return filmRepository.findByNomeFilm(nomeFilm);
-    }
 
     public List<Personaggi> findPersonaggiByTitoloFilm(String titoloFilm) {
         List<Film> filmList = filmRepository.findByNome(titoloFilm);
@@ -47,9 +41,5 @@ public class FilmService {
             log.info("Nessun personaggio trovato per il film '" + titoloFilm + "'");
         }
     }
-
-    /*public List<Film> findByNome(String nome){
-        return filmRepository.findByNome(nome);
-    }*/
 
 }

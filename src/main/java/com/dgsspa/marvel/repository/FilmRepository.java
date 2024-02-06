@@ -13,15 +13,6 @@ import java.util.Set;
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Integer> {
 
-    @Query(
-        value = "SELECT p.Nome AS NomePersonaggio FROM personaggi p JOIN pfilm pf ON p.id = pf.id_personaggi JOIN film f ON f.id = pf.id_film WHERE f.Nome = (:nomeFilm)",
-            nativeQuery = true)
-    Set<String> findByNomeFilm(@Param("nomeFilm") String nomeFilm);
-
     List<Film> findByNome(String nome);
-
-    /*@Query(value = "SELECT a.Abilita  FROM personaggi p JOIN abilita a ON p.id = a.EroeID WHERE p.Nome = (:nome)",
-            nativeQuery = true)
-    Set<String> findByNome(@Param("nome")String nome);*/
 
 }

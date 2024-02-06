@@ -14,10 +14,6 @@ public class PersonaggiService{
     @Autowired
     private PersonaggiRepository personaggiRepository;
 
-    public Set<String> findByNomePersonale(String nome){
-        return personaggiRepository.findByNomePersonale(nome);
-    }
-
     public Personaggi findByNome(String nome){
         return personaggiRepository.findByNome(nome);
     };
