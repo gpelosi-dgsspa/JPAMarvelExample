@@ -1,4 +1,4 @@
-INSERT INTO personaggi (Nome, Razza, Eta, DataNascita)
+INSERT INTO personaggi (nome, razza, eta, data_nascita)
 VALUES
     ('Iron Man', 'Umano', 40, '1980-05-29 00:00:00'),
     ('Captain America', 'Sovrannaturale', 100, '1920-07-04 00:00:00'),

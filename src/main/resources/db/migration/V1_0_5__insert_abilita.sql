@@ -1,4 +1,4 @@
-INSERT INTO `abilita` (`Abilita`, `Potenza`, `EroeID`)
+INSERT INTO `abilita` (`abilita`, `potenza`, `eroe_id`)
 VALUES
     ('Armatura Tecnologica', 'Elevata', 1),
     ('Super Forza', 'Elevata', 2),

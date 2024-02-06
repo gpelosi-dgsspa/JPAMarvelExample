@@ -4,14 +4,16 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /*import javax.persistence.*;*/
 import java.util.Date;
 
 @Entity/*
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)*/
-@Table(name = "Abilita")
+@Table(name = "abilita")
 @Data
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Abilita {
@@ -20,13 +22,13 @@ public class Abilita {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @Column(name = "Abilita")
+    @Column(name = "abilita")
     private String abilita;
 
-    @Column(name = "Potenza")
-    private String Potenza;
+    @Column(name = "potenza")
+    private String potenza;
 
-    @ManyToOne
-    @JoinColumn(name = "EroeID")
-    private Personaggi personaggi;
+    /*@ManyToOne
+    @JoinColumn(name = "eroe_id")
+    private Personaggi personaggi;*/
 }

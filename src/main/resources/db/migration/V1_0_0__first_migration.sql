@@ -1,4 +1,4 @@
 CREATE SCHEMA IF NOT EXISTS javamarvelexample;
-CREATE TABLE personaggi (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,Nome varchar(200),Razza varchar(50),Eta integer NULL,DataNascita timestamp NULL);
-CREATE TABLE film (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,Nome varchar(200),Regista varchar(50),DataUscita timestamp NULL);
-CREATE TABLE abilita (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,Abilita varchar(200),Potenza varchar(50),EroeID int,FOREIGN KEY (EroeID) REFERENCES personaggi(id));
+CREATE TABLE personaggi (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,nome varchar(200),razza varchar(50),eta integer NULL,data_nascita timestamp NULL);
+CREATE TABLE film (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,nome varchar(200),regista varchar(50),data_uscita timestamp NULL);
+CREATE TABLE abilita (id integer NOT NULL AUTO_INCREMENT PRIMARY KEY,abilita varchar(200),potenza varchar(50),eroe_id int,FOREIGN KEY (eroe_id) REFERENCES personaggi(id));

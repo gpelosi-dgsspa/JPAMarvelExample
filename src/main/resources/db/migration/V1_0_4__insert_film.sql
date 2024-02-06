@@ -1,4 +1,4 @@
-INSERT INTO film (`Nome`, `Regista`, `DataUscita`)
+INSERT INTO film (`nome`, `regista`, `data_uscita`)
 VALUES
     ('The Avengers', 'Joss Whedon', '2012-04-25'),
     ('Avengers: Infinity War', 'Anthony Russo, Joe Russo', '2018-04-25'),
